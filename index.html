@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Versely. | A quiet place to make something meaningful</title>
+  <meta name="description" content="A distraction-free home for your poetry. Capture fleeting thoughts, find your rhythm, and let a little of yourself onto the page.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✒️</text></svg>">
+</head>
+<body>
+
+  <!-- ==============================================================
+       1. LANDING VIEW (The original peaceful poet's landing page)
+       ============================================================== -->
+  <div class="page-wrapper" id="landing-view">
+
+    <!-- EXACT BACKGROUND (Matching user reference media_1792008400592.png with no changes whatsoever) -->
+    <div class="exact-bg-panel" aria-hidden="true">
+      <img src="images/exact_bg.png" class="exact-bg-img" alt="">
+    </div>
+
+    <!-- NAV (Paints above background) -->
+    <nav class="navbar">
+      <div class="logo">Versely<span class="logo-dot">.</span></div>
+      <a href="#" class="btn-lets-write" id="lets-create-btn">
+        lets create <span class="arrow-icon">&#8599;</span>
+      </a>
+    </nav>
+
+    <!-- HERO — left text -->
+    <main class="hero">
+      <div class="hero-left">
+        <p class="eyebrow-label">A QUIET PLACE TO MAKE SOMETHING MEANINGFUL</p>
+
+        <h1 class="hero-heading">
+          <span class="heading-serif">Whisper your soul</span>
+          <span class="heading-cursive">onto the canvas.</span>
+        </h1>
+
+        <p class="hero-desc">
+          A distraction-free home for your poetry. Capture
+          fleeting thoughts, find your rhythm, and let a little of
+          yourself onto the page.
+        </p>
+
+        <div class="cta-row">
+          <button class="btn-write-verse" id="write-verse-btn">
+            Write your first verse &nbsp;&#8599;
+          </button>
+          <span class="free-forever">Free. Forever.</span>
+        </div>
+
+        <p class="small-note">No account needed to begin. Just you and your words.</p>
+      </div>
+    </main>
+
+    <!-- JOURNAL — paints on top of dark panel & doodles, solid & crisp with drop shadow -->
+    <div class="journal-float">
+      <div class="journal-container" id="journal">
+        <img
+          src="images/versely_journal.png"
+          alt="Open journal with handwritten poetry, a fountain pen, and autumn leaves"
+          class="journal-img">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==============================================================
+       2. CANVAS VIEW — Creative Studio (Reached by "lets create")
+       ============================================================== -->
+  <section class="canvas-view hidden" id="canvas-view" aria-label="Poetry Canvas Workspace">
+    
+    <!-- TOP NAVIGATION BAR -->
+    <header class="canvas-topbar">
+      <div class="topbar-left">
+        <button class="topbar-logo-btn" id="canvas-logo-btn" title="Versely — Home">
+          Versely<span class="logo-dot">.</span>
+        </button>
+        <button class="btn-sidebar-toggle" id="btn-toggle-sidebar" title="Toggle left drawer" aria-label="Toggle navigation">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3" ry="3"/>
+            <line x1="9" y1="3" x2="9" y2="21"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- BREADCRUMB & EDITABLE POEM TITLE -->
+      <div class="topbar-breadcrumbs">
+        <span class="breadcrumb-item breadcrumb-collection" id="breadcrumb-form-label">
+          <svg class="breadcrumb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          <span id="breadcrumb-form-text">Free Verse</span>
+        </span>
+        <span class="breadcrumb-sep">&#8250;</span>
+        <span class="breadcrumb-item breadcrumb-current">
+          <svg class="breadcrumb-icon edit-pen" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+          <span class="breadcrumb-title-text" id="breadcrumb-title" contenteditable="true" spellcheck="false" title="Click to rename poem">Blank canvas</span>
+        </span>
+      </div>
+
+      <!-- TOP RIGHT UTILITY ACTIONS -->
+      <div class="topbar-right">
+        <span class="topbar-save-status" id="save-status-text">Saved</span>
+        <button class="topbar-btn btn-new-canvas" id="btn-new-canvas" title="Start a fresh canvas">
+          <span class="btn-icon">+</span>
+          <span class="btn-text">New</span>
+        </button>
+        <button class="topbar-btn topbar-btn-export" id="btn-export-trigger" title="Export poem card or text">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span class="btn-text">Export</span>
+        </button>
+        <button class="topbar-btn btn-exit-home" id="btn-exit-canvas" title="Return to landing page">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span class="btn-text">Home</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- WORKSPACE 3-COLUMN BODY -->
+    <div class="canvas-workspace" id="canvas-workspace">
+      
+      <!-- LEFT SIDEBAR -->
+      <aside class="canvas-sidebar-left" id="canvas-sidebar-left">
+        <div class="sidebar-scrollable">
+
+          <!-- Section: Add Tools -->
+          <div class="sidebar-group">
+            <button class="btn-sidebar-add-text" id="btn-sidebar-add-text" title="Add a new text box onto the canvas (or double-click canvas)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+              </svg>
+              <span>+ Add Text Box</span>
+            </button>
+            <div class="sidebar-add-sub-row">
+              <button class="btn-sidebar-sub" id="btn-add-heading" title="Add a title heading box">+ Heading</button>
+              <button class="btn-sidebar-sub" id="btn-add-stanza" title="Add a verse stanza box">+ Stanza</button>
+            </div>
+          </div>
+
+          <!-- Section: Poetic Modes & Templates -->
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">POETIC FORMS</div>
+            <nav class="sidebar-nav">
+              <button class="sidebar-nav-item active" data-form="Free Verse" data-template="free-verse" title="Free Verse — Clean blank slate">
+                <span class="nav-item-icon">✎</span>
+                <div class="nav-item-text">
+                  <span class="nav-item-label">Free Verse</span>
+                  <span class="nav-item-sub">Clean blank canvas</span>
+                </div>
+                <span class="nav-item-arrow">&#8250;</span>
+              </button>
+              <button class="sidebar-nav-item" data-form="Haiku" data-template="haiku" title="Haiku — 3 lines • 5, 7, 5 syllables">
+                <span class="nav-item-icon">🌸</span>
+                <div class="nav-item-text">
+                  <span class="nav-item-label">Haiku</span>
+                  <span class="nav-item-sub">3 lines • 5, 7, 5 syllables</span>
+                </div>
+                <span class="nav-item-arrow">&#8250;</span>
+              </button>
+              <button class="sidebar-nav-item" data-form="Sonnet" data-template="sonnet" title="Shakespearean Sonnet — 14 lines • 3 quatrains + couplet">
+                <span class="nav-item-icon">📜</span>
+                <div class="nav-item-text">
+                  <span class="nav-item-label">Sonnet</span>
+                  <span class="nav-item-sub">14 lines • 3 quatrains + couplet</span>
+                </div>
+                <span class="nav-item-arrow">&#8250;</span>
+              </button>
+              <button class="sidebar-nav-item" data-form="Limerick" data-template="limerick" title="Limerick — 5 lines • AABBA bouncy rhythm">
+                <span class="nav-item-icon">🎭</span>
+                <div class="nav-item-text">
+                  <span class="nav-item-label">Limerick</span>
+                  <span class="nav-item-sub">5 lines • AABBA rhythm</span>
+                </div>
+                <span class="nav-item-arrow">&#8250;</span>
+              </button>
+              <button class="sidebar-nav-item" data-form="Couplets" data-template="couplets" title="Couplets — Rhyming pairs">
+                <span class="nav-item-icon">⚡</span>
+                <div class="nav-item-text">
+                  <span class="nav-item-label">Couplets</span>
+                  <span class="nav-item-sub">Rhyming couplet pairs</span>
+                </div>
+                <span class="nav-item-arrow">&#8250;</span>
+              </button>
+            </nav>
+          </div>
+
+          <!-- Section: The Muse -->
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">THE MUSE</div>
+            <div class="muse-card">
+              <p class="muse-prompt" id="muse-prompt-text">"Write of an autumn leaf that refused to fall until the first star appeared."</p>
+              <button class="btn-muse-spark" id="btn-muse-spark">
+                <span>✦</span> New Inspiration
+              </button>
+            </div>
+          </div>
+
+          <!-- Section: Media & Soundscape -->
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">MEDIA</div>
+            <div class="media-card">
+              <div class="media-card-title">Ambient Soundscape</div>
+              <div class="ambiance-grid">
+                <button class="btn-ambiance" data-sound="rain">🌧 Soft Rain</button>
+                <button class="btn-ambiance" data-sound="vinyl">📻 Lo-Fi Vinyl</button>
+                <button class="btn-ambiance" data-sound="fire">🔥 Fireplace</button>
+                <button class="btn-ambiance" data-sound="night">🌌 Night Forest</button>
+              </div>
+              <div class="ambiance-controls" id="ambiance-controls" style="display: none;">
+                <button class="btn-sound-toggle" id="btn-sound-play">Stop Sound</button>
+                <input type="range" id="slider-sound-vol" class="ctrl-range" min="0" max="100" value="40" title="Sound volume">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- CENTER WRITING CANVAS -->
+      <main class="canvas-center" id="canvas-center">
+        <div class="canvas-sheet-wrapper">
+          
+          <!-- THE MAIN CANVAS CARD (Matches the centered card in reference image) -->
+          <div class="canvas-card" id="canvas-card">
+            
+            <!-- DYNAMIC BACKGROUND LAYER (Dot-grid, Curated Image, or Custom Upload) -->
+            <div class="canvas-bg-layer" id="canvas-bg-layer"></div>
+            
+            <!-- TINT OVERLAY (Readability control) -->
+            <div class="canvas-overlay-layer" id="canvas-overlay-layer"></div>
+
+            <!-- TEXT WRITING CONTENT CONTAINER (Houses movable & editable text boxes) -->
+            <div class="canvas-content" id="canvas-content">
+              <!-- Text boxes dynamically mounted here -->
+            </div>
+
+            <!-- CANVAS CORNER CONTROLS (Live metrics & fullscreen expand) -->
+            <div class="canvas-card-footer">
+              <div class="canvas-live-stats" id="canvas-live-stats">
+                <span id="stat-lines">0 lines</span>
+                <span class="stat-bullet">•</span>
+                <span id="stat-words">0 words</span>
+                <span class="stat-bullet">•</span>
+                <span id="stat-syllables">~0 syllables</span>
+              </div>
+
+              <button class="btn-canvas-fullscreen" id="btn-canvas-fullscreen" title="Focus mode / Toggle fullscreen" aria-label="Toggle focus mode">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- RIGHT ACCORDION INSPECTOR (Matches Settings, Adjustment, Media, Subtitles, Templates in reference) -->
+      <aside class="canvas-sidebar-right" id="canvas-sidebar-right">
+        <div class="accordion-container">
+          
+          <!-- 1. SETTINGS ACCORDION -->
+          <div class="accordion-panel open" data-accordion="settings">
+            <button class="accordion-header" type="button">
+              <span class="accordion-title">Settings</span>
+              <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="accordion-body">
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="select-font">Typography</label>
+                <select id="select-font" class="ctrl-select">
+                  <option value="'Playfair Display', Georgia, serif" selected>Playfair Display (Serif)</option>
+                  <option value="'Dancing Script', cursive">Dancing Script (Cursive)</option>
+                  <option value="'EB Garamond', Georgia, serif">EB Garamond (Literary)</option>
+                  <option value="'Courier Prime', monospace">Courier Prime (Typewriter)</option>
+                  <option value="'Inter', sans-serif">Inter (Modern Clean)</option>
+                </select>
+              </div>
+
+              <div class="ctrl-group">
+                <div class="ctrl-label-row">
+                  <label class="ctrl-label" for="slider-font-size">Font Size</label>
+                  <span class="ctrl-val" id="val-font-size">20px</span>
+                </div>
+                <input type="range" id="slider-font-size" class="ctrl-range" min="14" max="34" value="20" step="1">
+              </div>
+
+              <div class="ctrl-group">
+                <div class="ctrl-label-row">
+                  <label class="ctrl-label" for="slider-line-height">Line Spacing</label>
+                  <span class="ctrl-val" id="val-line-height">1.8</span>
+                </div>
+                <input type="range" id="slider-line-height" class="ctrl-range" min="1.2" max="2.6" value="1.8" step="0.1">
+              </div>
+
+              <div class="ctrl-group">
+                <label class="ctrl-label">Text Alignment</label>
+                <div class="align-btn-group">
+                  <button class="btn-align active" data-align="left" title="Left align">Left</button>
+                  <button class="btn-align" data-align="center" title="Center align">Center</button>
+                  <button class="btn-align" data-align="justify" title="Justify align">Justify</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. ADJUSTMENT ACCORDION (Backgrounds, Images, Opacity) -->
+          <div class="accordion-panel open" data-accordion="adjustment">
+            <button class="accordion-header" type="button">
+              <span class="accordion-title">Adjustment</span>
+              <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="accordion-body">
+              
+              <div class="ctrl-group">
+                <label class="ctrl-label">Canvas Background</label>
+                <div class="bg-mode-tabs">
+                  <button class="bg-tab active" data-bg-mode="dotgrid">Dot Grid</button>
+                  <button class="bg-tab" data-bg-mode="images">Gallery</button>
+                  <button class="bg-tab" data-bg-mode="solid">Solid</button>
+                </div>
+              </div>
+
+              <!-- CURATED BACKGROUND IMAGES THUMBNAILS -->
+              <div class="ctrl-group" id="bg-gallery-section">
+                <label class="ctrl-label">Curated Backgrounds</label>
+                <div class="bg-thumb-grid">
+                  <button class="bg-thumb-btn active" data-bg="dotgrid" title="Default Dot Grid">
+                    <span class="thumb-pattern dotgrid-thumb"></span>
+                    <span class="thumb-name">Dot Grid</span>
+                  </button>
+                  <button class="bg-thumb-btn" data-bg="images/writing.jpg" title="Writing Desk">
+                    <img src="images/writing.jpg" alt="Writing Desk">
+                    <span class="thumb-name">Writing Desk</span>
+                  </button>
+                  <button class="bg-thumb-btn" data-bg="images/journal.jpg" title="Vintage Journal">
+                    <img src="images/journal.jpg" alt="Vintage Journal">
+                    <span class="thumb-name">Journal</span>
+                  </button>
+                  <button class="bg-thumb-btn" data-bg="images/dark_doodles_bg.png" title="Dark Chalkboard">
+                    <img src="images/dark_doodles_bg.png" alt="Dark Chalkboard">
+                    <span class="thumb-name">Chalkboard</span>
+                  </button>
+                  <button class="bg-thumb-btn" data-bg="parchment" title="Warm Parchment">
+                    <span class="thumb-pattern parchment-thumb"></span>
+                    <span class="thumb-name">Parchment</span>
+                  </button>
+                  <button class="bg-thumb-btn" data-bg="night" title="Starry Midnight">
+                    <span class="thumb-pattern night-thumb"></span>
+                    <span class="thumb-name">Midnight</span>
+                  </button>
+                </div>
+
+                <!-- CUSTOM USER IMAGE UPLOADER -->
+                <div class="custom-bg-upload-wrap">
+                  <label class="btn-custom-upload" for="user-bg-file-input">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                      <circle cx="8.5" cy="8.5" r="1.5"/>
+                      <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                    <span>Upload Custom Image</span>
+                  </label>
+                  <input type="file" id="user-bg-file-input" accept="image/*" style="display: none;">
+                  <div class="active-bg-indicator" id="active-bg-label">Active: Dot Grid</div>
+                </div>
+              </div>
+
+              <!-- READABILITY CONTROLS -->
+              <div class="ctrl-group">
+                <div class="ctrl-label-row">
+                  <label class="ctrl-label" for="slider-bg-overlay">Overlay Tint (Darkness)</label>
+                  <span class="ctrl-val" id="val-bg-overlay">10%</span>
+                </div>
+                <input type="range" id="slider-bg-overlay" class="ctrl-range" min="0" max="85" value="10" step="5">
+              </div>
+
+              <div class="ctrl-group">
+                <div class="ctrl-label-row">
+                  <label class="ctrl-label" for="slider-bg-blur">Background Softness</label>
+                  <span class="ctrl-val" id="val-bg-blur">0px</span>
+                </div>
+                <input type="range" id="slider-bg-blur" class="ctrl-range" min="0" max="10" value="0" step="1">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- EXPORT MODAL -->
+    <div class="export-modal-backdrop" id="export-modal" style="display: none;">
+      <div class="export-modal-dialog">
+        <div class="export-modal-header">
+          <h3>Export Your Poem</h3>
+          <button class="btn-modal-close" id="btn-close-export">&times;</button>
+        </div>
+        <div class="export-modal-body">
+          <p class="export-modal-desc">Save your poem card with its chosen background or export to plain text:</p>
+          <div class="export-options-grid">
+            <button class="export-choice-card" id="btn-export-image-card">
+              <span class="choice-icon">🖼</span>
+              <strong>Download Image Card (.png)</strong>
+              <span>Aesthetic card with your selected background</span>
+            </button>
+            <button class="export-choice-card" id="btn-export-text-file">
+              <span class="choice-icon">📝</span>
+              <strong>Download Text (.txt)</strong>
+              <span>Clean plain text file for saving</span>
+            </button>
+            <button class="export-choice-card" id="btn-export-copy-clipboard">
+              <span class="choice-icon">📋</span>
+              <strong>Copy to Clipboard</strong>
+              <span>Formatted verse ready to paste</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div class="toast-notification" id="toast-notification" aria-live="polite"></div>
+
+  </section>
+
+  <script src="curated_bgs.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
